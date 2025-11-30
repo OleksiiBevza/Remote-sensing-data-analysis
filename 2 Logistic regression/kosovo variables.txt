@@ -1,0 +1,194 @@
+Paper 1
+Covariates for logistic regression 
+     - Distance from roads (dynamic)
+     - Distance from settlements (static, recomputed, for prediction they keep it unchanged.)
+     - Distance from forest edge (dynamic, recomputed: buffers expanding outwards from the forest/non-forest boundary. As deforestation happens, the forest edge moves)
+     - Fragmentation index (dynamic, recomputed: in a 3×3 window from the pattern of forest vs non-forest. )
+     - Slope (static)
+     - Elevation (static)
+
+
+
+Paper 2
+Covariates for logistic regression 
+     - distance from river (static)
+     - agricultural density (static)
+     - Altitude (static)
+     - settlement density (static)
+     - forest density (static)
+     - population density (static)
+     - distance from road (static)
+     - Slope (static)
+
+
+
+Paper 3
+Covariates for logistic regression 
+     - Slope (static)
+     - Elevation (static)
+     - Aspect (from DEM, static) = which direction the slope faces (north/west…)
+     - Distance from roads (static)
+     - Distance from residential areas (static)
+
+
+Parer 4
+Covariates for logistic regression 
+     - Precipitation (dynamic)
+     - Temperature (dynamic)
+     - simple license, (like to use forest) (dynamic)
+     - forest concession,  (dynamic, though later dropped due to multicollinearity.)
+     - volume of charcoal exploited, (dynamic)
+     - agricultural areas, (dynamic)
+     - Villages, (dynamic)
+     - population dynamics (dynamic)
+They use dynamic but non-spatial predictors (time series per district) to explain the temporal behavior of forest cover.
+
+
+
+Paper 5
+     - Covariates for logistic regression 
+     - Distance from forest edge (dynamic)
+     - Distance from roads (static)
+     - Distance from river (static)
+     - Distance from settlement (static)
+     - Elevation (static)
+     - Slope (static)
+
+Paper 6
+     - Covariates for logistic regression 
+     - Distance from settlements (static)
+     - Distance from roads (static)
+     - Distance from waterbodies (static)
+     - Elevation (static)
+     - Slope (static)
+     - Soil series and rock types 
+     - DEM
+     - NDVI and NDWI indices that measure vegetation richness
+
+
+Paper 7
+     - Covariates for logistic regression 
+     - Drought index (dynamic)
+     - Karstification intensity (static)
+     - Mean annual precipitation (dynamic)
+     - GDP (dynamic)
+     - Population (dynamic)
+     - Land-use change (dynamic)
+     - Accessibility (static)
+     - Slope of 15–25 (static)
+
+
+Paper 8
+Covariates for logistic regression 
+     - Roads (static)
+     - Waterbodies (static)
+     - Protected Areas (static)  
+     - Topography/Slope (static) 
+
+
+
+Paper 9
+Covariates for logistic regression 
+     - Slope (static)
+     - Aspect (static)
+     - Distance from roads (static)
+     - Distance from residential area (static)
+
+
+
+Paper 10
+So they were (they also included links
+Socio-economic factors:
+     - Population density (Static)
+     - Population growth (dynamic-summary raster )
+     - Marginalization index (Static)
+     - Road maps (dynamic)
+Biophysical factors
+     - Altitude (static)
+     - Slope (static)
+     - Forest productivity (static)
+     - Mean annual precipitation (static)
+     - Soil moisture (ground humidity) (static)
+     - Temperature (static)
+     - Droughts
+Proximity-related factors (computed by Euclidean distance algorithm)
+     - Distance from natural protected areas
+     - Distance from agricultural areas
+     - Distance from pasture areas
+     - Distance from hydrography
+     - Distance from localities with <2500 inhabitants
+     - Distance from human settlements
+
+
+
+
+Now I want to build a logistic regression for Kosovo for 2000 - 2024 data Tree cover loss using this website: https://storage.googleapis.com/earthenginepartners-hansen/GFC-2024-v1.12/download.html
+
+I assume non-linearity between response and predictors:
+I assume next predictors to play an influence on tree-cover loss:
+Socio-economic factors:
+     - Population density (Dynamic)  
+     - Population growth (Dynamic)
+     - GDP (dynamic)
+     - Land-use change (dynamic) Map with main land use types in Kosovo?
+     - Water exploitation index
+Biophysical factors:
+     - Slope (static)
+     - Elevation (static)
+     - Monthly average precipitation in Kosovo (Dynamic)
+     - Monthly average temperatures in Kosovo (Dynamic)
+     - Monthly Average Normalized Difference Snow Index (NDSI)
+Proximity-related factors (computed by Euclidean distance algorithm)
+     - Distance from natural protected areas
+     - Distance from agricultural areas
+     - Distance from pasture areas
+     - Distance from hydrography
+     - Distance from localities with <2500 inhabitants
+     - Distance from human settlements
+
+
+
+
+
+
+
+
+
+================================================================================================================
+# MY REGRESSION VARIABLES
+================================================================================================================
+I assume non-linearity between response and predictors:
+I assume next predictors to play an influence on tree-cover loss:
+
+
+
+Outcome:
+Tree cover loss 2000-2020
+
+
+Predictors
+Socio-economic factors:
+     - Artificial Surfaces                   {CORINE Land Cover Classification}
+     - Agricultural Areas                    {CORINE Land Cover Classification}
+     - Distribution of human population per grid {WorldPop}
+                                            
+ 
+Biophysical factors:
+     - Slope (static)                        {TEM}
+     - Elevation (static)                    {TEM}
+     - Forests and Semi-Natural Areas        {CORINE Land Cover Classification}   # will be deleted due to multicollinearity
+     - Wetlands                              {CORINE Land Cover Classification}
+     - Water Bodies                          {CORINE Land Cover Classification}
+     - Monthly average max temperature       {
+
+
+Proximity-related factors (computed by Euclidean distance algorithm)
+     - Distance from natural protected areas
+     - Distance from agricultural areas
+     - Distance from hydrography
+     - Distance from localities with <2500 inhabitants
+     - Distance from human settlements
+
+
+
+
