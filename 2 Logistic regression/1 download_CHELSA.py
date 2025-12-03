@@ -4,7 +4,7 @@
 # To run the script print in command prompt:
 #   1. conda activate Deforestation   # activate your anaconda environment
 #   2. cd "C:\Users\oleks\Desktop\DEFORESTATION\2 Logistic regression"
-#   3. python download_CHELSA.py
+#   3. python "1 download_CHELSA.py"
 # The rasters will be saved into specified folders
 #######################################################################################
 
